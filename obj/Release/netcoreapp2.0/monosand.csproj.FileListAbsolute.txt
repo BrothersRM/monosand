@@ -1,0 +1,10 @@
+C:\Users\broth\Documents\source\repos\monosand\bin\Release\netcoreapp2.0\monosand.deps.json
+C:\Users\broth\Documents\source\repos\monosand\bin\Release\netcoreapp2.0\monosand.runtimeconfig.json
+C:\Users\broth\Documents\source\repos\monosand\bin\Release\netcoreapp2.0\monosand.runtimeconfig.dev.json
+C:\Users\broth\Documents\source\repos\monosand\bin\Release\netcoreapp2.0\monosand.dll
+C:\Users\broth\Documents\source\repos\monosand\bin\Release\netcoreapp2.0\monosand.pdb
+C:\Users\broth\Documents\source\repos\monosand\obj\Release\netcoreapp2.0\monosand.csprojAssemblyReference.cache
+C:\Users\broth\Documents\source\repos\monosand\obj\Release\netcoreapp2.0\monosand.AssemblyInfoInputs.cache
+C:\Users\broth\Documents\source\repos\monosand\obj\Release\netcoreapp2.0\monosand.AssemblyInfo.cs
+C:\Users\broth\Documents\source\repos\monosand\obj\Release\netcoreapp2.0\monosand.dll
+C:\Users\broth\Documents\source\repos\monosand\obj\Release\netcoreapp2.0\monosand.pdb
