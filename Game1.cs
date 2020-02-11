@@ -10,16 +10,60 @@ namespace monosand
 {
     public static class Config
     {
-        public static int TileWidth = 3;
+        public static int TileWidth = 4;
         public static int BoardWidth = 300;
-        public static int BoardHeight = 300;
+        public static int BoardHeight = 200;
         public static int ScreenWidth = TileWidth * BoardWidth;
         public static int ScreenHeight = TileWidth * BoardHeight;
+
+        public static List<Color> DirtColors = new List<Color>()
+        {
+            new Color(124, 88, 53),
+            new Color(102, 68, 44),
+            new Color(76, 43, 33),
+            new Color(46, 25, 21)
+        };
+
+        public static List<Color> GrassColors = new List<Color>()
+        {
+            new Color(120,144,48),
+            new Color(72,144,48),
+            new Color(103,146,103),
+            new Color(103,146,125)
+        };
+        
+        public static Color GetRandomDirt(Random rng)
+        {
+            var idx = rng.Next(100);
+            if (idx < 5)
+            {
+                return Config.DirtColors[3];
+            }
+            else if (idx < 20)
+            {
+                return Config.DirtColors[2];
+            }
+            else if (idx < 60)
+            {
+                return Config.DirtColors[1];
+            }
+            else
+                return Config.DirtColors[0];
+        }
     }
+    
+
     
     public class Sand
     {
         public Color Color;
+
+        public bool UpdatedLastTurn = false;
+
+        public Sand(Random rng)
+        {
+            Color = Config.GetRandomDirt(rng);
+        }
     }
 
     public class GridPosition
@@ -44,21 +88,24 @@ namespace monosand
 
         Color[] data = new Color[Config.TileWidth*Config.TileWidth];
 
-        Option<Sand>[,] board = new Option<Sand>[Config.BoardWidth, Config.BoardHeight];
-
+        //Option<Sand>[,] board = new Option<Sand>[Config.BoardWidth, Config.BoardHeight];
+        
+        Dictionary<GridPosition, Sand> board = new Dictionary<GridPosition, Sand>();
+        
         private System.Random rng = new System.Random();
 
         public void MoveBoardDown()
         {
-            for (int y = 0; y < Config.BoardHeight; y++)
+            for (int y = Config.BoardHeight - 1; y >= 0 ; y--)
             {
-                for (int x = 0; x < Config.BoardWidth; x++)
+                for (int x = Config.BoardWidth - 1; x >=0; x--)
                 {
                     var ldx = x;
                     var ldy = y;
                     var current = board[x, y];
                     current.MatchSome(item =>
                     {
+                        item.UpdatedLastTurn = true;
                         if (ldy + 1 < Config.BoardHeight && ldx < Config.BoardWidth - 1 && ldx > 0) 
                         {
                             if (!board[ldx, ldy + 1].HasValue)
@@ -90,6 +137,14 @@ namespace monosand
                                 board[ldx - 1, ldy + 1] = current;
                                 board[ldx, ldy] = Option.None<Sand>();
                             }
+                            else
+                            {
+                                item.UpdatedLastTurn = false;
+                            }
+                        }
+                        else
+                        {
+                            item.UpdatedLastTurn = false;
                         }
                     });
                 }
@@ -166,11 +221,11 @@ namespace monosand
             if (state.LeftButton == ButtonState.Pressed)
             {
                 var position = GridPosition.FromScreenPosition(state.Position);
-                for (int y = position.Y - 9; y < position.Y + 9; y++)
+                for (int y = position.Y - 0; y < position.Y + 1; y++)
                 {
-                    for(int x = position.X - 9; x < position.X + 9; x++)
+                    for(int x = position.X - 0; x < position.X + 1; x++)
                     {
-                        board[x, y] = Option.Some<Sand>(new Sand {Color = Color.Black});
+                        board[x, y] = Option.Some<Sand>(new Sand(rng));
                     }
                 }
             }

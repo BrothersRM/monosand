@@ -1,28 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\broth\\Documents\\source\\repos\\monosand\\monosand.csproj": {}
+    "C:\\Users\\Ryan\\source\\repos\\monosand\\monosand.csproj": {}
   },
   "projects": {
-    "C:\\Users\\broth\\Documents\\source\\repos\\monosand\\monosand.csproj": {
+    "C:\\Users\\Ryan\\source\\repos\\monosand\\monosand.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\broth\\Documents\\source\\repos\\monosand\\monosand.csproj",
+        "projectUniqueName": "C:\\Users\\Ryan\\source\\repos\\monosand\\monosand.csproj",
         "projectName": "monosand",
-        "projectPath": "C:\\Users\\broth\\Documents\\source\\repos\\monosand\\monosand.csproj",
-        "packagesPath": "C:\\Users\\broth\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\broth\\Documents\\source\\repos\\monosand\\obj\\",
+        "projectPath": "C:\\Users\\Ryan\\source\\repos\\monosand\\monosand.csproj",
+        "packagesPath": "C:\\Users\\Ryan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ryan\\source\\repos\\monosand\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\broth\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Ryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -68,7 +70,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
