@@ -7,6 +7,7 @@
     <e p="C:\Users\Ryan\.Rider2019.3\system\rust_expanded_macros\EwrwdyIG\expansions" t="IncludeRecursive" />
     <e p="C:\Users\Ryan\source\repos\monosand" t="IncludeRecursive">
       <e p="bin" t="ExcludeRecursive" />
+      <e p="Config.cs" t="Include" />
       <e p="Content" t="Include">
         <e p="Content.mgcb" t="Include" />
       </e>
@@ -14,13 +15,14 @@
       <e p="monosand.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netcoreapp2.0" t="Include">
+          <e p="netcoreapp3.1" t="Include">
             <e p="monosand.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="Program.cs" t="Include" />
+      <e p="Terrain.cs" t="Include" />
     </e>
   </component>
 </project>
